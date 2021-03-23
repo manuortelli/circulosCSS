@@ -1,0 +1,149 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    filter: url(#gooey);
+}
+
+
+.container .circle 
+{
+    position: relative;
+    min-width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background:white;
+}
+
+.container .circle:before{
+    content:'';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    border-radius: 60%;
+    background: rgb(105, 74, 98) ;
+    z-index: -1;
+    filter: blur(30px);
+}
+
+
+
+.container .circle.circle1,
+.container .circle.circle1:before
+{
+    background: linear-gradient(90deg,#f00,#00ffff);
+}
+
+.container .circle.circle2,
+.container .circle.circle2:before
+{
+    background: linear-gradient(90deg,#ffeb3b,#da00ff);
+}
+
+.container .circle.circle1{
+    animation: animate1 5s linear infinite;
+}
+
+@keyframes animate1
+{
+    0%{
+        transform: translateX(0) rotate(0deg);
+    }
+    30%{
+        transform: translateX(250px) rotate(240deg);
+    }
+    60%{
+        transform: translateX(250px) rotate(480deg);
+    }
+    100%{
+        transform: translateX(0) rotate(720deg);
+    }
+}
+
+
+.container .circle.circle2{
+    animation: animate2 5s linear infinite;
+}
+
+@keyframes animate2
+{
+    0%{
+        transform: translateX(0) rotate(0deg);
+    }
+    30%{
+        transform: translateX(-250px) rotate(-240deg);
+    }
+    60%{
+        transform: translateX(-250px) rotate(480deg);
+    }
+    100%{
+        transform: translateX(0) rotate(720deg);
+    }
+}
+
+svg {
+    width: 0;
+    height: 0;
+}
+
+
+h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+    color:#fff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 4em;
+    z-index:10000;
+    pointer-events: none;
+
+}
+
+
+
+/*Esto está de mas
+.container .circle .ojo{
+    left: 55%;
+    top: 55%;
+    position: absolute;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+
+}
+
+.container .circle .ojo2{
+    right: 55%;
+    top: 55%;
+    position: absolute;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background:rgb(255, 255, 255);
+
+}
+
+*/
